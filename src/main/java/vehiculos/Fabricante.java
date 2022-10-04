@@ -58,12 +58,11 @@ public class Fabricante {
         return inicial;
     }
 
-    public void aumentarVentas(Fabricante fabricante){
-        listado.get(listado.indexOf(fabricante)).aumentarVentas(fabricante);
+    public int getUnidadesVendidas() {
+        return unidadesVendidas;
+    }
 
-        }
-
-        
-
-
+    public void setUnidadesVendidas(int unidadesVendidas) {
+        this.unidadesVendidas = unidadesVendidas;
+    }
 }

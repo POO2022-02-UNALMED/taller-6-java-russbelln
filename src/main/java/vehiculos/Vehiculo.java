@@ -27,7 +27,7 @@ public class Vehiculo {
         this.traccion = traccion;
         this.fabricante = fabricante;
         CantidadVehiculos++;
-        fabricante.aumentarVentas(fabricante);
+        fabricante.setUnidadesVendidas(fabricante.getUnidadesVendidas()+1);
     }
 
     public String getPlaca() {
