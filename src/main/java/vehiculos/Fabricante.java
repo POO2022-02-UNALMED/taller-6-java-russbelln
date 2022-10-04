@@ -59,11 +59,11 @@ public class Fabricante {
     }
 
     public void aumentarVentas(Fabricante fabricante){
-        if (listado.contains(fabricante)){
-            fabricante.unidadesVendidas++;
-        }
+        listado.get(listado.indexOf(fabricante)).aumentarVentas(fabricante);
 
         }
+
+        
 
 
 }
