@@ -26,6 +26,7 @@ public class Vehiculo {
         this.peso = peso;
         this.traccion = traccion;
         this.fabricante = fabricante;
+        fabricante.aumentarVentas(fabricante);
     }
 
     public String getPlaca() {
@@ -104,17 +105,5 @@ public class Vehiculo {
         return "Automoviles: "+Automovil.getCantidadAutomoviles()+"\n"+"Camionetas: "+Camioneta.getCantidadCamionetas()+"\n"+"Camiones: "+Camion.getCantidadCamiones();
     }
 
-    public void contarFabricante(Fabricante fabricante){
-        HashMap<Fabricante, Integer> map = Fabricante.listado.get(Fabricante.listado.indexOf(fabricante));
-
-        for (int i = 0; i < Fabricante.listado.size(); i++) {
-            if (map.containsKey(fabricante.getNombre())) {
-                map.put(fabricante, map.get(fabricante.getNombre()) + 1);
-            } else {
-                map.put(fabricante, 1);
-            }
-        }
-
-
-    }
+    
 }
