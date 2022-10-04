@@ -1,5 +1,6 @@
 package vehiculos;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Vehiculo {
@@ -12,6 +13,7 @@ public class Vehiculo {
     private String traccion;
     private Fabricante fabricante;
     private static int CantidadVehiculos=0;
+    private static ArrayList<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
 
     public Vehiculo(){
 
@@ -28,6 +30,7 @@ public class Vehiculo {
         fabricante.unidadesVendidas++;
         this.fabricante = fabricante;
         CantidadVehiculos++;
+        Vehiculo.vehiculos.add(this);
 
     }
 
@@ -107,7 +110,11 @@ public class Vehiculo {
         return "Automoviles: "+Automovil.getCantidadAutomoviles()+"\n"+"Camionetas: "+Camioneta.getCantidadCamionetas()+"\n"+"Camiones: "+Camion.getCantidadCamiones();
     }
 
+    public static ArrayList<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
 
-
-
+    public static void setVehiculos(ArrayList<Vehiculo> vehiculos) {
+        Vehiculo.vehiculos = vehiculos;
+    }
 }

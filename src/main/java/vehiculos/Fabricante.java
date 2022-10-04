@@ -10,7 +10,11 @@ public class Fabricante {
     private String nombre;
     private Pais pais;
 
-    static ArrayList<Fabricante> listado = new ArrayList<>();
+    public Fabricante(String nombre) {
+        this.nombre=nombre;
+    }
+
+    static ArrayList<Fabricante> listado = new ArrayList<Fabricante>();
 
     public Fabricante(){
 
@@ -48,14 +52,40 @@ public class Fabricante {
     }
 
     public static Fabricante fabricaMayorVentas() {
-        Fabricante inicial = listado.get(0);
-        for (Fabricante fabricante : listado) {
-            if (inicial.unidadesVendidas < fabricante.unidadesVendidas) {
-                inicial = fabricante;
+        ArrayList<String> fabricante = new ArrayList<String>();
+        ArrayList<Integer> contador = new ArrayList<Integer>();
+        for (Vehiculo i: Vehiculo.getVehiculos()) {
+
+            if (fabricante.contains(i.getFabricante().getNombre())) {
+            }
+            else {
+                fabricante.add(i.getFabricante().getNombre());
+                int cont=0;
+                for (Vehiculo j: Vehiculo.getVehiculos()) {
+                    if (i.getFabricante().getNombre().equals(j.getFabricante().getNombre())) {
+                        cont++;
+                    }
+                }
+                contador.add(cont);
             }
 
         }
-        return inicial;
+        //hallar mayor de contador
+        int mayor=0;
+        int temp=0;
+        int index = 0;
+        for ( Integer k:contador) {
+            if (k>mayor) {
+                mayor=k;
+                index=temp;
+            }
+            temp++;
+        }
+        //encontrar la coincidencia en la lista pais2
+
+        String nombre=fabricante.get(index);
+        Fabricante f=new Fabricante(nombre);
+        return f;
     }
 
     public int getUnidadesVendidas() {
