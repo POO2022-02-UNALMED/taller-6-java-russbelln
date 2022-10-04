@@ -11,7 +11,7 @@ public class Vehiculo {
     private float peso;
     private String traccion;
     private Fabricante fabricante;
-    private static int CantidadadVehiculos;
+    private static int CantidadVehiculos=0;
 
     public Vehiculo(){
 
@@ -26,7 +26,7 @@ public class Vehiculo {
         this.peso = peso;
         this.traccion = traccion;
         this.fabricante = fabricante;
-        CantidadadVehiculos++;
+        CantidadVehiculos++;
         fabricante.aumentarVentas(fabricante);
     }
 
@@ -94,17 +94,19 @@ public class Vehiculo {
         this.fabricante = fabricante;
     }
 
-    public static int getCantidadadVehiculos() {
-        return CantidadadVehiculos;
+    public static int getCantidadVehiculos() {
+        return CantidadVehiculos;
     }
 
-    public static void setCantidadadVehiculos(int cantidadadVehiculos) {
-        CantidadadVehiculos = cantidadadVehiculos;
+    public static void setCantidadVehiculos(int cantidadadVehiculos) {
+        CantidadVehiculos = cantidadadVehiculos;
     }
 
     public String vehiculosPorTipo(){
         return "Automoviles: "+Automovil.getCantidadAutomoviles()+"\n"+"Camionetas: "+Camioneta.getCantidadCamionetas()+"\n"+"Camiones: "+Camion.getCantidadCamiones();
     }
+
+
 
 
 }
