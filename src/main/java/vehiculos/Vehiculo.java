@@ -26,6 +26,7 @@ public class Vehiculo {
         this.peso = peso;
         this.traccion = traccion;
         this.fabricante = fabricante;
+        CantidadadVehiculos++;
         fabricante.aumentarVentas(fabricante);
     }
 
@@ -105,5 +106,5 @@ public class Vehiculo {
         return "Automoviles: "+Automovil.getCantidadAutomoviles()+"\n"+"Camionetas: "+Camioneta.getCantidadCamionetas()+"\n"+"Camiones: "+Camion.getCantidadCamiones();
     }
 
-    
+
 }

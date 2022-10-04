@@ -1,6 +1,11 @@
 package vehiculos;
 
 public class Pais {
+
+    public Pais(String nombre) {
+        this.nombre = nombre;
+    }
+
     private String nombre;
 
     public String getNombre() {
@@ -11,7 +16,7 @@ public class Pais {
         this.nombre = nombre;
     }
 
-    public String paisMasVendedor(){
+    public static String paisMasVendedor(){
         return Fabricante.fabricaMayorVentas().getNombre();
     }
 }
