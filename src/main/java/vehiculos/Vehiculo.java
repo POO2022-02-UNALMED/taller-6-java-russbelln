@@ -25,9 +25,10 @@ public class Vehiculo {
         this.precio = precio;
         this.peso = peso;
         this.traccion = traccion;
+        fabricante.unidadesVendidas++;
         this.fabricante = fabricante;
         CantidadVehiculos++;
-        fabricante.setUnidadesVendidas(fabricante.getUnidadesVendidas()+1);
+
     }
 
     public String getPlaca() {

@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.HashMap;
 
 public class Fabricante {
-    private int unidadesVendidas=0;
+    int unidadesVendidas=0;
     private String nombre;
     private Pais pais;
 
